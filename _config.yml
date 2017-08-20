@@ -1,0 +1,21 @@
+title: Jonathan Spengeman
+email: jonathan.spengeman@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Thoughts from a Software Craftsman.
+baseurl: ""
+url: "jspengeman.com"
+twitter_username: jspengeman
+github_username:  jspengeman
+paginate: 4
+
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+sass:
+    style: compressed
