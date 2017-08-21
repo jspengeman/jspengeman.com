@@ -3,7 +3,7 @@ email: jonathan.spengeman@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Thoughts from a Software Craftsman.
 baseurl: ""
-url: "http://jspengeman.com"
+url: "https://jspengeman.com/"
 email: "jonathan.spengeman@gmail.com"
 stackoverflow_url: "https://stackoverflow.com/users/8112353/jonathan-spengeman"
 instagram_url: "https://www.instagram.com/jspengy/"
