@@ -1,8 +1,8 @@
 ---
 ---
 
-$green: #16A085;
-$dark-blue: #2C3E50;
+$yellow: #F7CA18;
+$light-blue: #22A7F0;
 
 * {
 	box-sizing:border-box;
@@ -36,7 +36,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	font-family: 'Open Sans', sans-serif;
-	border-top: 7px solid $green;
+	border-top: 7px solid $yellow;
 	background-color: #F2F2F2;
 }
 ol, ul {
@@ -56,8 +56,8 @@ table {
 }
 
 blockquote {
-  background: $dark-blue;
-  border-left: 10px solid darken($dark-blue, 10);
+  background: $light-blue;
+  border-left: 10px solid darken($light-blue, 10);
   margin: 1.5em 0;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
@@ -71,7 +71,7 @@ blockquote p {
 
 .heading {
 	display: block;
-	background-color: $dark-blue;
+	background-color: $light-blue;
 	text-align: center;
 	padding: 25px 0 85px 0;
 	color: #fff;
@@ -83,6 +83,7 @@ blockquote p {
 		}
 	}
 	img.heading-logo {
+		border: 2px solid #fff;
 		border-radius: 50%;
 		max-width: 64px;
 		margin-bottom: 8px;
@@ -112,7 +113,7 @@ blockquote p {
 	}
 	.line-date {
 		span {
-			background-color: $dark-blue;
+			background-color: $light-blue;
 			color: #fff;
 		}
 	}
@@ -177,7 +178,7 @@ blockquote p {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	background-color: $green;
+	background-color: $yellow;
 	line-height: 45px;
 	font-size: 12px;
 	a {
@@ -247,7 +248,7 @@ article.index-article {
 			text-decoration: none;
 			transition: 0.1s color ease-out;
 			&:hover {
-				color: $green;
+				color: $yellow;
 			}
 			&:visited {
 				color: #555;
@@ -259,7 +260,7 @@ article.index-article {
 		line-height: 1.5;
 	}
 	a.read-more {
-		color: $green;
+		color: $yellow;
 		text-decoration: none;
 		transition: 0.1s color ease-out;
 		display: block;
@@ -268,7 +269,7 @@ article.index-article {
 			opacity: 0.8;
 		}
 		&:visited {
-			color: $green;
+			color: $yellow;
 		}
 	}
 }
@@ -314,7 +315,7 @@ article.index-article {
 		background-color: #eee;
 	}
 	a {
-		color: $green;
+		color: $yellow;
 		text-decoration: none;
 		transition: 0.1s color ease-out;
 		&:hover {
@@ -351,7 +352,7 @@ article.index-article {
 		margin-top: -1px;
 		height: 2px;
 		width: 100%;
-		background-color: $green;
+		background-color: $yellow;
 		display: block;
 	}
 }
@@ -374,7 +375,7 @@ footer {
 			color: #aaa;
 			font-size: 28px;
 			&:hover {
-				color: $green;
+				color: $yellow;
 				text-decoration: none;
 			}
 		}
@@ -385,6 +386,6 @@ footer {
 	margin-top: 45px;
 
 	a {
-		color: $green
+		color: $yellow
 	}
 }

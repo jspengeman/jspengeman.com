@@ -3,9 +3,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     {% if page.title %}
-        <title> {{ page.title }} </title>
+      <title> {{ page.title }} </title>
     {% else %}
-        <title> Jonathan Spengemen </title>
+      <title> Jonathan Spengemen </title>
     {% endif %}
 
     <!-- Favicon links -->
@@ -28,9 +28,9 @@
 
     <!-- open graph - profile or article -->
     {% if page.title %}
-        {% include og_article.html %}
+      {% include og_article.html %}
     {% else %}
-        {% include og_profile.html %}
+      {% include og_profile.html %}
     {% endif %}
 
     <!-- Styles and fonts -->
