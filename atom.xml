@@ -4,8 +4,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 	<title>Jonathan Spengeman's Blog</title>
-	<link href="{{ site.url | append: 'atom.xml' }}" rel="self"/>
-	<link href="{{ site.url }}"/>
+	<link href="{{ site.url | append: '/atom.xml' }}" rel="self"/>
+	<link href="{{ site.url | append: '/' }}"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
 	<id>{{ site.url }}</id>
 	<author>
