@@ -6,9 +6,9 @@ baseurl: ""
 url: "https://jspengeman.com"
 email: "jonathan.spengeman@gmail.com"
 linkedin_url: "https://www.linkedin.com/in/jspengeman/"
-stackoverflow_url: "https://stackoverflow.com/users/8112353/jonathan-spengeman"
+stackoverflow_url: "https://stackoverflow.com/users/8112353/jonathan-spengeman/"
 instagram_url: "https://www.instagram.com/jspengy/"
-github_url:  "https://github.com/jspengeman"
+github_url:  "https://github.com/jspengeman/"
 
 permalink: /:title
 paginate_path: "/page-:num/"
@@ -34,3 +34,5 @@ defaults:
       type: posts
     values:
       is_post: true
+
+exclude: [vendor]
