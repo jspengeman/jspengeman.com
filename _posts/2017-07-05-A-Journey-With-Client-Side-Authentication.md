@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A Journey With Client Side Authentication
+permalink: /a-journey-with-client-side-authentication
 ---
 
 If you are building single page applications you will eventually come across the
