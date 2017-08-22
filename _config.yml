@@ -9,8 +9,9 @@ stackoverflow_url: "https://stackoverflow.com/users/8112353/jonathan-spengeman"
 instagram_url: "https://www.instagram.com/jspengy/"
 github_url:  "https://github.com/jspengeman"
 
+permalink: /:title
 paginate_path: "/page-:num/"
-paginate: 4
+paginate: 5
 
 # Build settings
 markdown: kramdown
