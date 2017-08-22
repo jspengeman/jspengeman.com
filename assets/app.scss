@@ -1,8 +1,6 @@
 ---
 ---
-
-$yellow: #F7CA18;
-$light-blue: #22A7F0;
+@import "colors";
 
 * {
 	box-sizing:border-box;
@@ -36,7 +34,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	font-family: 'Open Sans', sans-serif;
-	border-top: 7px solid $yellow;
+	border-top: 7px solid $accent-color;
 	background-color: #F2F2F2;
 }
 ol, ul {
@@ -56,8 +54,8 @@ table {
 }
 
 blockquote {
-  background: $light-blue;
-  border-left: 10px solid darken($light-blue, 10);
+  background: $main-color;
+  border-left: 10px solid darken($main-color, 10);
   margin: 1.5em 0;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
@@ -71,7 +69,7 @@ blockquote p {
 
 .heading {
 	display: block;
-	background-color: $light-blue;
+	background-color: $main-color;
 	text-align: center;
 	padding: 25px 0 85px 0;
 	color: #fff;
@@ -113,7 +111,7 @@ blockquote p {
 	}
 	.line-date {
 		span {
-			background-color: $light-blue;
+			background-color: $main-color;
 			color: #fff;
 		}
 	}
@@ -178,7 +176,7 @@ blockquote p {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	background-color: $yellow;
+	background-color: $accent-color;
 	line-height: 45px;
 	font-size: 12px;
 	a {
@@ -248,7 +246,7 @@ article.index-article {
 			text-decoration: none;
 			transition: 0.1s color ease-out;
 			&:hover {
-				color: $yellow;
+				color: $accent-color;
 			}
 			&:visited {
 				color: #555;
@@ -260,7 +258,7 @@ article.index-article {
 		line-height: 1.5;
 	}
 	a.read-more {
-		color: $yellow;
+		color: $accent-color;
 		text-decoration: none;
 		transition: 0.1s color ease-out;
 		display: block;
@@ -269,7 +267,7 @@ article.index-article {
 			opacity: 0.8;
 		}
 		&:visited {
-			color: $yellow;
+			color: $accent-color;
 		}
 	}
 }
@@ -315,7 +313,7 @@ article.index-article {
 		background-color: #eee;
 	}
 	a {
-		color: $yellow;
+		color: $accent-color;
 		text-decoration: none;
 		transition: 0.1s color ease-out;
 		&:hover {
@@ -352,7 +350,7 @@ article.index-article {
 		margin-top: -1px;
 		height: 2px;
 		width: 100%;
-		background-color: $yellow;
+		background-color: $accent-color;
 		display: block;
 	}
 }
@@ -375,7 +373,7 @@ footer {
 			color: #aaa;
 			font-size: 28px;
 			&:hover {
-				color: $yellow;
+				color: $accent-color;
 				text-decoration: none;
 			}
 		}
@@ -386,6 +384,6 @@ footer {
 	margin-top: 45px;
 
 	a {
-		color: $yellow
+		color: $accent-color
 	}
 }
