@@ -8,6 +8,7 @@
   margin-top: 25px;
   margin-bottom: 25px;
   border-left: $main-color solid 5px;
+  font-family: monospace, monospace;
 }
 
 pre {
@@ -85,3 +86,10 @@ pre {
 .highlight .vi { color: #003333 } /* Name.Variable.Instance */
 .highlight .vm { color: #003333 } /* Name.Variable.Magic */
 .highlight .il { color: #FF6600 } /* Literal.Number.Integer.Long */
+
+.highlighter-rouge {
+  padding: 2px 3px 2px 3px;
+  border-radius: 5%;
+  background-color: #f0f3f3;
+	font-family: monospace, monospace;
+}

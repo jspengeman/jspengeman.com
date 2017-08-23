@@ -8,7 +8,7 @@ layout: list
     <div class="line-date">
       <span> {{ post.date | date: "%B %-d, %Y" }} </span>
     </div>
-    <p> {{ post.excerpt }} </p>
+    <p> {{ post.content | strip_html | truncatewords: 50 }} </p>
     <a class="read-more" href="{{ post.url }}">Read More</a>
   </article>
 {% endfor %}
