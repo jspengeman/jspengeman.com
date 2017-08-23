@@ -104,7 +104,7 @@ any number of things. You will find testing your application to be a nightmare.
 These are not the only approaches to isolating side effects, but rather,
 a few examples. If you find you are relying on some side effect for your code to
 function correctly, consider changing your approach. It may be easy to understand
-when only a one or two side effects exist but as your application grows in
+when only one or two side effects exist but as your application grows in
 complexity it will crumble if you are relying on side effects.
 
 Did I miss anything or get anything wrong? Let me know in the comments section.
