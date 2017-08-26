@@ -327,6 +327,13 @@ article.index-article {
 	em {
 		font-style: italic;
 	}
+	strong {
+		font-weight: bold;
+	}
+	ul {
+		list-style: disc inside none;
+		margin: 25px 0;
+	}
 }
 
 .line-date {
