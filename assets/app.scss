@@ -48,23 +48,22 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
+blockquote p {
+  display: inline;
+}
+blockquote {
+  background: #f0f3f3;
+  border-left: 5px solid darken(#f0f3f3, 10);
+  margin: 1.5em 0;
+  padding: 0.5em 10px;
+  line-height: 1.4;
+  font-size: 16px;
+	font-style: italic;
+  color: #fff;
+}
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
-
-blockquote {
-  background: $main-color;
-  border-left: 10px solid darken($main-color, 10);
-  margin: 1.5em 0;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-  line-height: 1.4;
-  font-size: 16px;
-  color: #fff;
-}
-blockquote p {
-  display: inline;
 }
 
 .heading {
