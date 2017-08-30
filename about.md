@@ -7,7 +7,7 @@ permalink: /about/
 I have been developing software professionally for three years. I started my
 professional career at [Bixly](https://www.bixly.com/) developing web applications
 using Django and Angular. After a couple years at Bixly I moved to Washington DC
-to pursue continue my career at Boeing where I have been developing backend services
+to continue my career at Boeing where I have been developing backend services
 utilizing primarily Java. Although, for the past few months I have been developing
 in primarily ES6 which has been an absolute blast.
 

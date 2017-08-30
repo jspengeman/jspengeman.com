@@ -98,6 +98,6 @@ On each `dispatch` the `posts` reducer will be called, it will see that a `postS
 As you can see, our state is updating, and it is updating in a predictable way. If I dispatched an action that the `posts` reducer didn't care about our current state gets returned, essentially ignoring the action. By not mutating the state that was passed in we can make better assertions about our code and we know exactly where state modifications have to take place.
 
 ##### Summary
-In this post we discussed the essential lego pieces of Redux. In the next iteration of this serious we will discuss more advanced topics including middleware, asynchronous actions, how to compose reducers, and how to query for data from your store. In this post you should have learned how actions, action creators, reducers and the store are used to create a model layer.
+In this post we discussed the essential lego pieces of Redux. In the next iteration of this series we will discuss more advanced topics including middleware, asynchronous actions, how to compose reducers, and how to query for data from your store. In this post you should have learned how actions, action creators, reducers and the store are used to create a model layer.
 
 Redux can be used as the model layer for nearly any type of application. I have been thinking a lot lately about applying it to other types of applications such as mobile or desktop apps or even a video game. What have you used Redux to build and what were your thoughts on it, was it a success or a failure?
