@@ -20,17 +20,19 @@ layout: list
     </a>
   {% endif %}
 
-  <div class="pages">
-    {% for page in (1..paginator.total_pages) %}
-      {% if page == 1 %}
-        <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-      {% elsif page == paginator.page %}
-        <a class="active" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-      {% else %}
-        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-      {% endif %}
-    {% endfor %}
-  </div>
+  {% if paginator.total_pages > 1 %}
+    <div class="pages">
+      {% for page in (1..paginator.total_pages) %}
+        {% if page == 1 %}
+          <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+        {% elsif page == paginator.page %}
+          <a class="active" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+        {% else %}
+          <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
 
   {% if paginator.next_page %}
     <a class="next" href="{{ paginator.next_page_path }}">
