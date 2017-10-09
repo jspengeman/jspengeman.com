@@ -4,6 +4,8 @@ title: Being a Pragmatic Programmer - Part 2
 permalink: /being-a-pragmatic-programmer-part-2
 ---
 
+Continuing on my thoughts on being a pragmatic programmer I discuss design by contract and assertive programming. In conjunction with that, I spend a some time discussing problem solving. Next, I dive into my experiences with wizard code, a topic we cover more in detail later on. Continuing, I describe how design to test is more valuable than trying to strap tests on when all is said and done. The last topic I spend some time on is the concept of how orthogonal software components should be (or shouldn't). If you didn't read the [previous post](/being-a-pragmatic-programmer-part-1) in this series I recommend doing so but it is not required.
+
 ### Design By Contract and Assertive Programming
 Design by contract and assertive programming seem to be very orthogonal issues to me. I discuss design by contract in this [post](/design-by-contract-with-react-and-redux) but for those that haven't read it; design by contract is essentially contractual obligations that software components __must__ uphold certain pre and post conditions. I firmly believe that you will see an increase in maintainability if you document a contract for every piece of code you write. In conjunction with that, the maintainability of your product will sky rocket if you are being an assertive programmer with regards to your contract.
 
