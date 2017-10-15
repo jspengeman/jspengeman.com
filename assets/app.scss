@@ -153,8 +153,8 @@ table {
 	display: block;
 	position: relative;
 	overflow: hidden;
-	@media (min-width: 960px) {
-		max-width: 1000px;
+	@media (min-width: 1000px) {
+		max-width: 960px;
 		padding: 65px 45px;
 	}
 	&.index-list {
