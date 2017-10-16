@@ -93,7 +93,7 @@ table {
 		}
 	}
 	h1 {
-		font-weight: bold;
+		font-weight: 600;
 		font-size: 18px;
 		letter-spacing: 2px;
 		@media (min-width: 760px) {
@@ -184,7 +184,7 @@ table {
 		padding:0 3px;
 		display: inline-block;
 		&.active {
-			font-weight: bold;
+			font-weight: 600;
 		}
 		&:hover {
 			opacity: 0.7;
@@ -237,7 +237,7 @@ article.index-article {
 		margin-bottom: 0;
 	}
 	h3 {
-		font-weight: 800;
+		font-weight: 600;
 		margin:0px;
 		font-size: 24px;
 		a {
@@ -280,7 +280,7 @@ article.index-article {
 		text-align: justify;
 	}
 	h1, h2, h3, h4, h5 {
-		font-weight: bold;
+		font-weight: 600;
 		color: #333;
 	}
 	h1, h2, h3 {
@@ -328,7 +328,7 @@ article.index-article {
 		font-style: italic;
 	}
 	strong {
-		font-weight: bold;
+		font-weight: 700;
 	}
 	ul {
 		list-style: disc inside none;
@@ -371,7 +371,7 @@ footer {
 	color: #aaa;
 	span.copy {
 		font-size: 18px;
-		font-weight: bold;
+		font-weight: 700;
 	}
 	ul.social-nav {
 		margin: 15px 0 25px 0;
