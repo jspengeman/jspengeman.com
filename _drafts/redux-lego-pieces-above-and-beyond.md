@@ -107,4 +107,37 @@ store.dispatch(fetchPosts())
 As you can see, by dispatching the `fetchPosts` async action we were able to attempt to fetch the posts for the application and inform the users of the asynchronous success or failure. All while still allowing the user to perform other actions in the application. 
 
 #### Lego Piece #8: Selectors
+If redux is like a database for your relational state and reducers are like your tables the only missing piece we have not discussed are queries. Selectors are used to query for state from your redux state tree and compute derived values so you can store the minimal possible state. You can use selectors the same way you would use queries with an actual database. They can be used to do filtering, searching, and aggregation operations. In its most simple form a selector takes in the redux state and then does a query against that state.
 
+{% highlight javascript %}
+const getPosts = (state) => state.entities.posts
+{% endhighlight %}
+
+Selectors can decouple the structure of your data from your view. Your view no longer needs to know about the structure of your state object, but simply that there is a function that takes in the application state and returns the posts. You are free to now change the structure to whatever you would like.
+
+Since all selectors are functions that use state as their input you can compose selectors within one another.
+
+{% highlight javascript %}
+const getNumberOfPosts = (state) => getPosts(state).length
+{% endhighlight %}
+
+Selectors really begin to shine when you want to do more completed operations that require multiple pieces of data. Using a library like [reselect](https://github.com/reactjs/reselect) you can join queries the same way you would with a typical database. Although, the syntax is a little bit different since we are working with JavaScript functions rather than SQL queries but the concept is the same.
+
+{% highlight javascript %}
+const getSelectedPostId = (state) => state.posts.selectedId
+
+const getSelectedPost = createSelector(
+  getPosts,
+  getSelectedPostId, 
+  (posts, selectedPostId) => {
+    return posts.find(post => post.id === selectedPostId)
+  }
+)
+{% endhighlight %}
+
+The `createSelector` function accepts a variable number of selectors as input and the final argument is know as the result function. The result function is similar to your joined database query. The result function will be passed in all of the results from the input selectors you passed as arguments to `createSelector` allowing you use all of the results within a single function, essentially joining all of the results together.
+
+One thing that makes `reselect` so awesome is that selectors made with `createSelector` are memoized, which means they do not recompute unless their arguments change. This is great, anytime we call `getSelectedPost` it will only have to do the `find` operation if it has not done it already for the specific `posts` and `selectedPostId` arguments. If either one of those values change then the selector will recompute otherwise it will return the cached values.
+
+#### Closing Thoughts
+In this post we learned how to utilize `combineReducers` to combine reducers so that we could decompose reducers into more legible functions that are only responsible for managing a single part of the state tree rather than multiple parts. In conjunction with that we learned how we can leverage Redux's middleware to allow us to do asynchronous actions using [redux-thunk](https://github.com/gaearon/redux-thunks). Lastly, we discussed the notion of Redux being akin to a database that you can query using selectors you wrote yourself or ones that were built with [reselect](https://github.com/reactjs/reselect). In the next post in this series we will discuss how you can leverage all the different lego pieces we have discussed so far to create a model layer that is agnostic of your view layer. Stay tuned!
