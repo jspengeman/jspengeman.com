@@ -8,7 +8,6 @@ Redux is the model layer for client side web applications. Although, it is reall
 
 What I love about redux is once you know what lego pieces you need to construct your lego set, it becomes quite natural to work with. On the other hand, what I don't love about Redux is the initial learning curve. In retrospect, it is not too bad, it was really a lot of googling how to do something specific like asynchronous actions and then learning there was a library for that. The most difficult part was finding out what all the different pieces were and how they all fit together.
 
-### The Essentials
 #### Lego Piece #1: Actions
 Actions are just objects. They are passed to a reducer and used to produce the next state. We will discuss reducers more in detail later on. For now, it is important to note that they must have a `type` property so that reducers can know what type of action it is. In conjunction with that they can optionally, have any other fields. I like to follow the [flux standard action](https://github.com/acdlite/flux-standard-action#actions) schema but it is not required.
 It is important to note that any properties you put into an action will be made available in your reducers.
