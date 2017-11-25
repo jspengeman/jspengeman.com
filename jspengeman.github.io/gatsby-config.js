@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    title: 'Jonathan Spengeman',
     description: 'Thoughts on software development by Jonathan Spengeman.',
     social: {
       email: 'jonathan.spengeman@gmail.com',
@@ -10,5 +11,15 @@ module.exports = {
       twitter: 'https://twitter.com/jspengy'
     }
   },
-  plugins: [`gatsby-plugin-react-helmet`],
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    `gatsby-transformer-remark`
+  ],
 }
