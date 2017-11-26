@@ -1,22 +1,10 @@
 import React from 'react'
 import Link from "gatsby-link"
+import BlogPostList from '../components/BlogPostList'
 
 const Home = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges
-
   return (
-    <div>
-      {posts.map(({ node }) =>
-        <Link to={node.fields.slug}>
-          <div key={node.id}>
-              {node.frontmatter.title}
-            <p>
-              {node.excerpt}
-            </p>
-          </div>
-        </Link>
-      )}
-    </div>
+    <BlogPostList posts={data.allMarkdownRemark.edges} />  
   )
 }
 
@@ -34,7 +22,7 @@ export const query = graphql`
             date
             slug
           }
-          excerpt
+          excerpt(pruneLength: 250)
         }
       }
     }

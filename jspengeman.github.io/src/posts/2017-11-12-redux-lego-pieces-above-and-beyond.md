@@ -7,7 +7,7 @@ In the first post on Redux Lego Pieces we discussed the essential building block
 #### Lego Piece #5: combineReducers
 It is unrealistic for any complex application to have a single reducer that manages the entire application's state. The more idiomatic approach is to have multiple reducers that each manage a specific part of the applications state. Although, `createStore` requires a single reducer as input so if we are intentionally writing multiple reducers we need to be able to still pass in a single reducer to `createStore`. The `combineReducers` function is used to (you guessed it) combine multiple reducers into a single reducer. The input requires a object which has each reducer mapped by the property name you would like that piece of state to be called in your state tree to the reducer that will manage that piece of state. 
 
-{% highlight javascript %}
+```javascript
 const posts = (state = [], action) => {
   switch(action.type) {
     // Implementation...
@@ -24,7 +24,7 @@ const entitiesReducer = combineReducers({
   posts,
   comments
 })
-{% endhighlight %}
+```
 
 The structure of your reducers will match the structure of your state since each reducer maps directly to a piece of state. In the example above I used `combineReducers` to create a new reducer that is responsible for managing all of my `post` and `comment` entities. The `entitiesReducer` when called will produce a state object with a `posts` property and `comments` property. If I wanted, I could change the name of the state a reducer is managing by changing the property name in the object you pass into the `combineReducers` function. 
 

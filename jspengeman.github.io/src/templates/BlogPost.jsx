@@ -1,16 +1,13 @@
 import React from "react"
 
-export default ({ data }) => {
+const BlogPost = ({ data }) => {
   const post = data.markdownRemark
   return (
     <div>
-      <h1>
-        {post.frontmatter.title}
-      </h1>
-      <h4>
-        {post.fields.date}
-      </h4>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <section className="markup-area">
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section className="comments"> </section>
+      </section>
     </div>
   )
 }
@@ -22,9 +19,8 @@ export const query = graphql`
       frontmatter {
         title
       }
-      fields {
-        date
-      }
     }
   }
 `
+
+export default BlogPost
