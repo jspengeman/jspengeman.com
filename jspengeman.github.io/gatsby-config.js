@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Jonathan Spengeman',
     description: 'Thoughts on software development by Jonathan Spengeman.',
+    siteUrl: 'https://jspengeman.com',
     social: {
       email: 'jonathan.spengeman@gmail.com',
       twitter: 'https://twitter.com/jspengy',
@@ -10,6 +11,7 @@ module.exports = {
       instagram: 'https://www.instagram.com/jspengy/'
     }
   },
+  // TODO: Plugins could be organized better perhaps? How do I test this stuff?
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
@@ -34,6 +36,59 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`
           },
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allContentfulBlogPost } }) => {
+              return allContentfulBlogPost.edges.map(({ node }) => ({
+                title: node.title,
+                date: node.date,
+                description: node.content.childMarkdownRemark.excerpt,
+                url: `${site.siteMetadata.siteUrl}/${node.slug}`,
+                guid: `${site.siteMetadata.siteUrl}/${node.slug}`,
+                custom_elements: [{ 
+                  'content:encoded': node.content.childMarkdownRemark.html 
+                }],
+              }));
+            },
+            query: `
+              {
+                allContentfulBlogPost(sort: {fields: [date], order: DESC}) {
+                  edges {
+                    node {
+                      title
+                      slug
+                      date
+                      content {
+                        childMarkdownRemark {
+                          html
+                          excerpt(pruneLength: 250)
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/atom.xml'
+          }
         ]
       }
     }
