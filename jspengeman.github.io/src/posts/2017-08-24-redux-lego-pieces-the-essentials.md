@@ -10,34 +10,34 @@ What I love about redux is once you know what lego pieces you need to construct 
 Actions are just objects. They are passed to a reducer and used to produce the next state. We will discuss reducers more in detail later on. For now, it is important to note that they must have a `type` property so that reducers can know what type of action it is. In conjunction with that they can optionally, have any other fields. I like to follow the [flux standard action](https://github.com/acdlite/flux-standard-action#actions) schema but it is not required.
 It is important to note that any properties you put into an action will be made available in your reducers.
 
-{% highlight javascript %}
+```javascript
 const exampleAction = {
   type: 'POST_STATUS',
   payload: {
     status: 'Hello, everyone.'
   }
 }
-{% endhighlight %}
+```
 
 I will be writing the model layer for an application that displays a list of text based statuses. It is really simple and hopefully less boring then a todo app example. Notice the action above has a `type` property whose value is `'POST_STATUS'`, this is called an `actionType`. They are worth abstracting out into constants as they will be used in multiple places such as your reducers but that is not required for small applications.
 
 #### Lego Piece #2: Action Creators
 Action Creators are functions that return objects. They are responsible for creating your actions with the data you provide to them. In the Actions section you saw the structure of an action that had already been created; which is useful, but you will want to be able to create actions with different parameters otherwise the function would just create the same object every single time you call it, and that is not very useful (most of the time).
 
-{% highlight javascript %}
+```javascript
 const postStatus = (status) => ({
   type: 'POST_STATUS',
   payload: {
     status
   }
 })
-{% endhighlight %}
+```
 
 The following example would be equivalent to the example we saw in the action section. Action Creators are essentially factories that pump out objects that are parameterized by the data you pass into them. This becomes really important later on when we discuss reducers.
 
-{% highlight javascript %}
+```javascript
 const postStatusAction = postStatus('Hello, everyone.')
-{% endhighlight %}
+```
 
 #### Lego Piece #3: Reducers
 Reducers are pure functions that take in the current state and the action being processed to produce the next state. If you are not familiar with functional purity check out my [article](/focusing-on-functional-purity) on that subject. Remember when I said Redux is predictable? Good, this is a major aspect of that point. Redux is predictable because all reducers are pure functions, meaning they will always produce the same output given the same input.
@@ -45,7 +45,7 @@ Reducers are pure functions that take in the current state and the action being 
 ##### The Three Golden Rules
 There are a few rules for writing correctly functioning reducers. __Rule number one__, every reducer should define a default state. In our example below, I define the default state to be an empty array. __Rule number two__, if a reducer does not handle an action of a specific type it should return its current state. The example code is abiding by rule number two by having a default case that returns the current state which was the value passed in. __Rule number three__, you cannot mutate the state argument that was passed in, you must return a new value or simply not modify the value passed (rule number one and two). That is because mutating an object makes a function impure and an impure function is an unpredictable one, the whole point of Redux is to be predictable. By utilizing `concat` I am creating a shallow copy of the array referenced by `state` and adding `action.payload.status` to it which returns a new array.
 
-{% highlight javascript %}
+```javascript
 const posts = (state = [], action) => {
   switch(action.type) {
     case 'POST_STATUS':
@@ -54,16 +54,16 @@ const posts = (state = [], action) => {
       return state
   }
 }
-{% endhighlight %}
+```
 
 ##### Reducers In The Wild
 We know that reducers produce our next state given our current state and some action, but what does that actually look like?
 
-{% highlight javascript %}
+```javascript
 const initialState = posts(undefined, {})
 const action = postStatus('fancy status')
 const nextState = posts(initialState, action)
-{% endhighlight %}
+```
 
 In the code sample above we call the reducer without a value for state and the action does not matter, this returns our default state of an empty list. Then on the next line we make a `postStatus` action and on the final line we pass our `initialState` and our `action` to the reducer to quite literally produce our next state. If we log `nextState` it will be `['fancy status']`.
 
@@ -73,7 +73,7 @@ The store is an object with a simple interface. It provides three different meth
 ##### Putting It All Together
 I am going to create an example using both the previous examples and the store I am defining below to demonstrate how all of these different lego pieces fit together.
 
-{% highlight javascript %}
+```javascript
 // pass in the posts reducer.
 const store = createStore(posts)
 
@@ -88,7 +88,7 @@ store.dispatch(postStatus('fancy status'))
 store.dispatch(postStatus('ultra status'))
 
 unsubscribe()
-{% endhighlight %}
+```
 
 On each `dispatch` the `posts` reducer will be called, it will see that a `postStatus` action was dispatched and it will add the status to the state and return the new state. The first dispatch call will result in `['super status']` to be logged, the second dispatch will result in `['super status', 'fancy status']` to be logged, and I think you are seeing the pattern here.
 

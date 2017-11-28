@@ -13,7 +13,7 @@ Further, side effects that mutate objects makes reasoning about your code more
 difficult.
 
 #### A Simple Example
-{% highlight javascript %}
+```javascript
 let target = null
 
 const onClick = (event) => {
@@ -28,7 +28,7 @@ const setTarget = (event) => {
 const doCalculation() => {
   return (target.value * 2) / 3
 }
-{% endhighlight %}
+```
 
 The example illustrates an `onClick` event handler that uses a function to mutate
 a shared state and then do some calculation on that shared state. This code is
@@ -38,7 +38,7 @@ before the calculation is actually done, causing your expected output to change.
 
 A bit of refactoring...
 
-{% highlight javascript %}
+```javascript
 const onClick = (event) => {
   doCalculation(event.target)
 }
@@ -46,7 +46,7 @@ const onClick = (event) => {
 const doCalculation = (target) => {
   return (target.value * 2) / 3
 }
-{% endhighlight %}
+```
 
 This is a *very* contrived example, but I have seen a fair amount of production
 code that utilizes a setter of some kind and then immediately after operates on

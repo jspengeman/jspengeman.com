@@ -6,11 +6,11 @@ const BlogPostList = ({ posts }) => {
     <div>
       {posts.map(({ node }) =>
         <BlogPost 
-          key={node.id}
-          slug={node.fields.slug}
-          title={node.frontmatter.title}
-          date={node.fields.date}
-          excerpt={node.excerpt}
+          key={node.slug}
+          slug={node.slug}
+          title={node.title}
+          date={node.date}
+          excerpt={node.content.childMarkdownRemark.excerpt}
         />
       )}
     </div>

@@ -38,7 +38,7 @@ The next day, you gather some information from your teammates and your project m
 
 Now have all the data we need, we can calculate an estimate! 
 
-{% highlight javascript %}
+```javascript
 /**
  * Calculate an estimate for a project with a given set of teammates,
  * a specific project complexity and a time duration in weeks.
@@ -66,7 +66,7 @@ const teammates = [
 ]
 
 const estimate = calculateEstimate(teammates, 175)
-{% endhighlight %}
+```
 
 Since velocities have a time component I hard coded them relative to the previously mentioned one week period to help demonstrate how the calculation is done. Although, days could be used instead of weeks but for this calculation to work correctly the velocity for each teammate would need to be hard code to the velocity for a single day since duration is multiplied by the individual velocity.
 

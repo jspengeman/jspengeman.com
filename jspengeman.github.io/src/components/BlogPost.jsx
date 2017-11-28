@@ -1,6 +1,11 @@
 import React from 'react'
 import Link from "gatsby-link"
 
+const formatDate = (date) => {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' }
+  return new Date(date).toLocaleDateString("en-US",options)
+}
+
 const BlogPost = ({ slug, title, date, excerpt }) => {
   return (
     <article className="index-article">
@@ -10,7 +15,7 @@ const BlogPost = ({ slug, title, date, excerpt }) => {
         </Link>
       </h3>
       <div className="line-date">
-        <span> {date}</span>
+        <span>{formatDate(date)}</span>
       </div>
       <p> {excerpt} </p>
       <Link to={slug} className="read-more">

@@ -1,11 +1,14 @@
 import React from "react"
 
+// TODO: Can I turn this into a generic MarkdownArea area some how?
 const BlogPost = ({ data }) => {
-  const post = data.markdownRemark
+  const html = data.contentfulBlogPost.content.childMarkdownRemark.html
   return (
     <div>
       <section className="markup-area">
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div 
+          dangerouslySetInnerHTML={{ __html: html }} 
+        />
         <section className="comments"> </section>
       </section>
     </div>
@@ -14,10 +17,12 @@ const BlogPost = ({ data }) => {
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
+    contentfulBlogPost(slug: { eq: $slug }) {
+      title
+      content {
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }

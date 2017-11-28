@@ -8,18 +8,18 @@ A large strength of React and Redux is the clear separation between the model la
 Can you spot a good contract? What about a bad one? In this section we will define what must exist for a contract to be considered good as well as what a bad contract looks like.
 
 #### Bad
-{% highlight javascript %}
+```javascript
 const sum = (array) => {
   return array.reduce((total, current) => {
     return total + current
   }, 0)
 }
-{% endhighlight %}
+```
 
 In the code above I define a function called `sum` with a single parameter named `array`. What happens if `array` is `null` or `undefined`? What happens if `array` contains elements that are not numbers? What were to happen if someone passed in a type that we were not expecting such as an object? There are a lot of things that could go wrong, and none of them are protected against or documented. A simple solution is to enforce some __rules__ on the input value of `array`.
 
 #### Good
-{% highlight javascript %}
+```javascript
 const sum = (array) => {
   invariant(array === undefined || array === null,
     "array cannot be null or undefined.")
@@ -28,12 +28,12 @@ const sum = (array) => {
     return total + current
   }, 0)
 }  
-{% endhighlight %}
+```
 
 The only addition was the `invariant` check. Which simply checks if the first argument is true, if so it throws an `Error`. We are now ensuring that `array` will never reach the function body without being defined. Although, there are still some improvements to be made.
 
 #### Best
-{% highlight javascript %}
+```javascript
 /**
  * Calculate the sum of an array of numbers.
  *
@@ -51,7 +51,7 @@ const sum = (array) => {
     return total + current
   }, 0)
 }  
-{% endhighlight %}
+```
 
 Not only is the contract being enforced, it is also documented. I no longer have to read the source code to know what `sum`'s contract is. I can clearly determine from the documentation what the expected parameters are. In conjunction with that, I also know that when I call this function the result is always defined. Which allows me to never need to worry about handling null or undefined return values. The contract is not perfect but it serves to demonstrate the value of contractually obligated software.
 
@@ -63,7 +63,7 @@ A good interface defines a contract and implementors follow it. Our view compone
 #### Presentational Components
 Presentational components are your view layer. You can consider presentational components to be similar to an interface that you are expecting others to implement. In the next code sample I will define a simple presentational component with what I consider to be a pretty thorough contract with regards to what the component is supposed to do and what edge cases may exist.
 
-{% highlight javascript %}
+```javascript
 /**
  * A slider used to select a single numerical
  * value given a minimum and a maximum value.
@@ -109,7 +109,7 @@ const Slider = (props) => {
     // Insert implementation here.
   )
 }  
-{% endhighlight %}
+```
 
 If you are familiar with React you are probably familiar with `PropTypes`. Although, the assurances the contract above buys you cannot be achieved with `PropTypes`. You cannot rely on `PropTypes` to make these sorts of assertions for you because `PropTypes` are mainly concerned with the types of properties not specific assertions with regards to their values (other than required vs not required). By having such a strong contract we know our presentational component will never get into an odd visual state because we know we can't pass in a current value that is less than our minimum value, or a maximum value that is less than or minimum value, who knows how the other erroneous cases would render.
 
@@ -120,7 +120,7 @@ Our `invariant` checks may seem like a lot of boiler plate but they do buy us a 
 #### Container Components
 Container components are the bridge between the model layer and the view layer. If we are continuing the OOP analogy from earlier, container components are like concrete classes that implement interfaces. Container components allow you to connect your Redux data store to a presentational component.
 
-{% highlight javascript %}
+```javascript
 const mapStateToProps = (state) => ({
   maximum: state.payments.maximum,
   minimum: state.payments.minimum,
@@ -141,7 +141,7 @@ const PaymentSlider = connect(
 PaymentSlider.defaultProps = {
   vertical: true
 }
-{% endhighlight %}
+```
 
 In the above code sample I use the `connect` function from [react-redux](https://github.com/reactjs/react-redux). If you are not familiar with the library I recommend reading a bit about it before continuing. The code sample demonstrates how you would *implement* your view components, remember that they are just like interfaces, the above code sample is the concrete implementation of the abstract `Slider` interface. It passes in all required props to the `Slider` as well as the optional props to construct a new component that is used to adjust the payment amount of our made up application.
 

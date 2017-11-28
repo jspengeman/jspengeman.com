@@ -4,25 +4,24 @@ import BlogPostList from '../components/BlogPostList'
 
 const Home = ({ data }) => {
   return (
-    <BlogPostList posts={data.allMarkdownRemark.edges} />  
+    <BlogPostList posts={data.allContentfulBlogPost.edges} />  
   )
 }
 
 export const query = graphql`
   query AllPostsQuery {
-    allMarkdownRemark(sort: {fields: [fields___date], order: DESC}) {
-      totalCount
+    allContentfulBlogPost(sort: {fields: [date], order: DESC}) {
       edges {
         node {
-          id
-          frontmatter {
-            title
+          title
+          slug
+          date
+          content {
+            childMarkdownRemark {
+              html
+              excerpt(pruneLength: 250)
+            }
           }
-          fields {
-            date
-            slug
-          }
-          excerpt(pruneLength: 250)
         }
       }
     }
