@@ -17,6 +17,12 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-100853455-1', 
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `ef8ydsi800nx`,
