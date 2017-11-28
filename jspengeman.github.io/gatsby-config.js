@@ -3,6 +3,7 @@ module.exports = {
     title: 'Jonathan Spengeman',
     description: 'Thoughts on software development by Jonathan Spengeman.',
     siteUrl: 'https://jspengeman.com',
+    avatar: 'http://jspengeman.com/assets/avatar.jpg',
     social: {
       email: 'jonathan.spengeman@gmail.com',
       twitter: 'https://twitter.com/jspengy',
