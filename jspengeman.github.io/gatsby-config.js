@@ -44,6 +44,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`
           },
+          `gatsby-remark-autolink-headers`
         ]
       }
     },
