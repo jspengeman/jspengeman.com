@@ -1,3 +1,5 @@
+const manifest = require('./manifest')
+
 module.exports = {
   siteMetadata: {
     title: 'Jonathan Spengeman',
@@ -48,6 +50,11 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: manifest,
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
