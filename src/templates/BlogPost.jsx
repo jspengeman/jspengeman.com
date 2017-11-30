@@ -18,7 +18,8 @@ const BlogPost = ({ data }) => {
       </Helmet>
       <section className='markup-area'>
         <div dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }} />
-        <section className='comments'> </section>
+        <section className='comments'> 
+        </section>
       </section>
     </div>
   )

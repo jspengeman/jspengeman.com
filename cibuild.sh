@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-set -e
-bundle exec jekyll build
+echo "ACTUALLY DO TESTS"
