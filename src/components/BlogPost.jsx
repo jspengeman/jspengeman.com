@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from "gatsby-link"
 
-const formatDate = (date) => {
+export const formatDate = (date) => {
   const options = { year: 'numeric', month: 'long', day: 'numeric' }
-  return new Date(date).toLocaleDateString("en-US",options)
+  return new Date(date).toLocaleDateString("en-US", options)
 }
 
 const BlogPost = ({ slug, title, date, excerpt }) => {

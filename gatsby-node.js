@@ -18,7 +18,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         createPage({
           path: node.slug,
           component: path.resolve(`./src/templates/BlogPost.jsx`),
-          context: { slug: node.slug }
+          context: { slug: node.slug },
+          layout: 'Empty'
         })
       })
       resolve()

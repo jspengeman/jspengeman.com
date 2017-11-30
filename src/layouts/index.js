@@ -1,17 +1,21 @@
 import React from 'react'
-import Header from './Header'
+import Header, { PageHeaderContent } from './Header'
 import Footer from './Footer'
 import '../assets/app.scss'
 import '../assets/syntax.scss'
 
-export default ({ children, data }) => {
+export default ({ children, data } ) => {
+  const social = data.site.siteMetadata.social
+  const title = data.site.siteMetadata.title
   return (
     <div>
-      <Header title={data.site.siteMetadata.title} />
+      <Header>
+        <PageHeaderContent title={title} /> 
+      </Header>
       <section className='foreground index-list has-pagination'>
         {children()}
       </section>
-      <Footer social={data.site.siteMetadata.social} />
+      <Footer social={social} />
     </div>
   )
 }

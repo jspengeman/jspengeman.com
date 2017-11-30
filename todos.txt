@@ -7,3 +7,4 @@ TODOS:
 6) Add ESLint (and/or Prettier maybe)
 7) Update manifest file to have better favicons.
 8) Investigate using netlify for hosting/deployments.
+9) Update the syntax.css styling so it looks 'nicer'
