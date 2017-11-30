@@ -1,0 +1,9 @@
+TODOS:
+1) Update header to support post dates and titles.
+2) Add Disqus comment thread for posts.
+3) Set up typography properly.
+4) Refactor sass to glamor or styled components.
+5) Add jest tests for all existing functionality.
+6) Add ESLint (and/or Prettier maybe)
+7) Update manifest file to have better favicons.
+8) Investigate using netlify for hosting/deployments.
