@@ -6,7 +6,7 @@ export const PostHeaderContent = ({ title, date }) => {
   return (
     <section className="heading-content">
       <Link className='home-link' to='/'>
-        <img className="heading-logo" src={avatar} alt={title} />
+        <img className="heading-logo" src={avatar} alt='avatar' />
       </Link>
       <h1> {title} </h1>
       <div className="line-date">
@@ -20,7 +20,7 @@ export const PageHeaderContent = ({ title }) => {
   return (
     <section className='heading-content'>
       <Link className='home-link' to='/'>
-        <img className='heading-logo' src={avatar} alt={title} />
+        <img className='heading-logo' src={avatar} alt='avatar' />
       </Link>
       <h1> {title} </h1>
       <h2> Software Engineer </h2>

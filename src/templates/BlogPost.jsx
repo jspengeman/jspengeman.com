@@ -15,7 +15,7 @@ const BlogPost = ({ data }) => {
           date={formatDate(post.date)} 
         />
       </Header> 
-      <section className='foreground index-list'>
+      <section className='foreground'>
         <Helmet>
           <title> {post.title} </title>
           <meta property='og:type' content='article' />
@@ -28,8 +28,7 @@ const BlogPost = ({ data }) => {
         </Helmet>
         <section className='markup-area'>
           <div dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }} />
-          <section className='comments'> 
-          </section>
+          <section className='comments'></section>
         </section>
       </section>
       <Footer social={site.social} />
