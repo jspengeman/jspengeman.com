@@ -2,7 +2,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Header, { PostHeaderContent } from '../components/Header'
 import Footer from '../components/Footer'
-import { formatDate } from '../components/BlogPost'
 import Comments from '../components/Comments'
 
 const BlogPost = ({ data }) => {
@@ -13,7 +12,7 @@ const BlogPost = ({ data }) => {
       <Header> 
         <PostHeaderContent 
           title={post.title} 
-          date={formatDate(post.date)} 
+          date={post.date} 
         />
       </Header> 
       <section className='foreground'>

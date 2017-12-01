@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import avatar from '../assets/avatar.jpg'
+import PostDate from './PostDate'
 
 export const PostHeaderContent = ({ title, date }) => {
   return (
@@ -9,9 +10,7 @@ export const PostHeaderContent = ({ title, date }) => {
         <img className="heading-logo" src={avatar} alt='avatar' />
       </Link>
       <h1> {title} </h1>
-      <div className="line-date">
-        <span> {date} </span>
-      </div>
+      <PostDate date={date} />
     </section>
   )
 }
