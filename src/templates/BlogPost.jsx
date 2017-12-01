@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Header, { PostHeaderContent } from '../layouts/Header'
-import Footer from '../layouts/Footer'
+import Header, { PostHeaderContent } from '../components/Header'
+import Footer from '../components/Footer'
 import { formatDate } from '../components/BlogPost'
 import Comments from '../components/Comments'
 
