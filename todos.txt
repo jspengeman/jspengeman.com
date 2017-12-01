@@ -1,4 +1,6 @@
 TODOS:
+1) Design how keywords will be used in the UI.
+2) Decide how/if pagination will work
 3) Set up typography properly.
 4) Refactor sass to glamor or styled components.
 5) Add jest tests for all existing functionality.
