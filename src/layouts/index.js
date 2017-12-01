@@ -1,6 +1,6 @@
 import React from 'react'
-import Header, { PageHeaderContent } from './Header'
-import Footer from './Footer'
+import Header, { PageHeaderContent } from '../components/Header'
+import Footer from '../components/Footer'
 import '../assets/app.scss'
 import '../assets/syntax.scss'
 
