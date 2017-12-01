@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import Header, { PostHeaderContent } from '../layouts/Header'
 import Footer from '../layouts/Footer'
 import { formatDate } from '../components/BlogPost'
+import Comments from '../components/Comments'
 
 const BlogPost = ({ data }) => {
   const post = data.contentfulBlogPost
@@ -28,7 +29,13 @@ const BlogPost = ({ data }) => {
         </Helmet>
         <section className='markup-area'>
           <div dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }} />
-          <section className='comments'></section>
+          <section className='comments'>
+            <Comments 
+              id={post.id}
+              title={post.title}
+              url={`${site.siteUrl}/${post.slug}`}
+            />
+          </section>
         </section>
       </section>
       <Footer social={site.social} />
@@ -52,6 +59,7 @@ export const query = graphql`
     }
 
     contentfulBlogPost(slug: { eq: $slug }) {
+      id
       title
       slug
       date
