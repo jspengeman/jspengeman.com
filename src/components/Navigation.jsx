@@ -2,8 +2,10 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
+// TODO: This component does not look like master at the moment.
 const List = styled.ul`
-  margin-bottom: 30px;
+  margin-bottom: 0px;
+  margin-left: 0px;
 `
 
 const ListItem = styled.li`

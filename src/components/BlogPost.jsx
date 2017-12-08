@@ -17,24 +17,22 @@ const Article = styled.article`
 
 const Title = styled.h3`
   font-weight: 600;
-  margin:0px;
+  margin: 0px;
   font-size: 24px;
 `
 
 const PostLink = styled(Link)`
-  color: #000;
+  color: #444;
   text-decoration: none;
   transition: 0.1s color ease-out;
   &:hover {
     color: ${props => props.theme.colors.accent};
   }
-  &:visited {
-    color: #555;
-  }
 `
 
 const Excerpt = styled.p`
   color: ${props => props.theme.colors.bodyText};
+  margin-bottom: 0px;
   line-height: 1.5;
 `
 
@@ -43,7 +41,7 @@ const ReadMore = styled(Link)`
   text-decoration: none;
   transition: 0.1s color ease-out;
   display: block;
-  margin: 12px 0 0 0;
+  margin: 8px 0 0 0;
   &:hover {
     opacity: 0.8;
   }

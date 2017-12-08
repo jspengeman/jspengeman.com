@@ -1,12 +1,9 @@
-$accent-color: #F7CA18;
-$main-color: #22A7F0;
-
 .gatsby-highlight {
   padding: 2px 3px 2px 3px;
   margin-top: 25px;
   margin-bottom: 25px;
   background-color: #f0f3f3;
-  border-left: $main-color solid 5px;
+  border-left: #22A7F0 solid 5px;
   font-family: monospace, monospace;
   border-radius: 3px;
 }
@@ -20,6 +17,7 @@ pre[class*="language-"]{
     word-break: normal;
     line-height: 1.5;
     padding: 10px;
+    margin-bottom: 0px;
 }
 
 .token.comment{

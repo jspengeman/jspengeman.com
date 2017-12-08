@@ -3,14 +3,19 @@ import styled, { ThemeProvider, injectGlobal } from 'styled-components'
 import Header, { PageHeaderContent } from '../components/Header'
 import Footer from '../components/Footer'
 import theme from '../assets/theme'
-import '../assets/app.scss'
-import '../assets/syntax.scss'
+import '../assets/syntax.css'
 
+// TODO: Anchor tags in the blog posts are not styled correctly.
 injectGlobal`
   body {
     background-color: #F2F2F2;
-    line-height: 1;
-    font-family: 'Open Sans';
+  }
+  a {
+    color: ${props => props.theme.colors.accent};
+    text-decoration: none;
+  }
+  a:visited {
+    color: ${props => props.theme.colors.accent};
   }
 `
 
@@ -40,11 +45,6 @@ const ForegroundWithPagination = Foreground.extend`
   }
 `
 
-// TODO: Is there a better way?
-const CenterText = styled.div`
-  text-align: center
-`
-
 export default ({ children, data }) => {
   const social = data.site.siteMetadata.social
   const title = data.site.siteMetadata.title
@@ -55,7 +55,7 @@ export default ({ children, data }) => {
           <PageHeaderContent title={title} /> 
         </Header>
         <ForegroundWithPagination>
-          <CenterText> {children()} </CenterText>
+          {children()} 
         </ForegroundWithPagination>
         <Footer social={social} />
       </div>

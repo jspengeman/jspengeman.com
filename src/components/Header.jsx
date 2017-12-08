@@ -9,16 +9,16 @@ const HeaderContent = styled.section`
   display: block;
   background-color: ${props => props.theme.colors.main};
   text-align: center;
-  padding: 25px 0 85px 0;
+  padding: 20px 0 85px 0;
   color: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   border-top: 7px solid ${props => props.theme.colors.accent};
 `
 
 const Title = styled.h1`
-  font-weight: 600;
   font-size: 18px;
   letter-spacing: 2px;
+  margin-bottom: 15px;
 
   @media (min-width: 760px) {
     font-size: 26px;
@@ -28,7 +28,7 @@ const Title = styled.h1`
 const SubTitle = styled.h2`
   font-weight: 400;
   font-size: 14px;
-  margin-top: 15px;
+  margin-bottom: 0px;
 
   @media (min-width: 760px) {
     font-size: 18px;

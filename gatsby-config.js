@@ -17,9 +17,14 @@ module.exports = {
   // TODO: Plugins could be organized better perhaps? How do I test this stuff?
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/assets/typography.js`,
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

@@ -9,9 +9,6 @@ import Comments from '../components/Comments'
 
 const CommentsWrapper = styled.section`
 	margin-top: 45px;
-	> a {
-		color: ${props => props.theme.colors.accent}
-  }
 `
 
 const BlogPost = ({ data }) => {
@@ -36,7 +33,7 @@ const BlogPost = ({ data }) => {
           <meta property='article:published_time' content={post.date} />
           <meta property='article:author' content={site.siteUrl} />
         </Helmet>
-        <section className='markup-area'>
+        <section>
           <div dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }} />
           <CommentsWrapper>
             <Comments 

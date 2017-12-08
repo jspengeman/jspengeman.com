@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import BlogPost from './BlogPost'
 import Pagination from './Pagination'
+
+const CenterText = styled.div`
+  text-align: center
+`
 
 class BlogPostList extends Component {
   constructor(props) {
@@ -32,15 +37,17 @@ class BlogPostList extends Component {
     const posts = this.getPostsByPage(this.props.posts)
     return (
       <div>
-        {posts.map(({ node }) =>
-          <BlogPost 
-            key={node.slug}
-            slug={node.slug}
-            title={node.title}
-            date={node.date}
-            excerpt={node.content.childMarkdownRemark.excerpt}
-          />
-        )}
+        <CenterText>
+          {posts.map(({ node }) =>
+            <BlogPost 
+              key={node.slug}
+              slug={node.slug}
+              title={node.title}
+              date={node.date}
+              excerpt={node.content.childMarkdownRemark.excerpt}
+            />
+          )}
+        </CenterText>
         <Pagination 
           currentPage={this.state.currentPage}
           numberOfPages={this.state.numberOfPages}
@@ -50,26 +57,5 @@ class BlogPostList extends Component {
     )
   }
 }
-
-// const BlogPostList = ({ posts }) => {
-//   return (
-//     <div>
-//       {posts.map(({ node }) =>
-//         <BlogPost 
-//           key={node.slug}
-//           slug={node.slug}
-//           title={node.title}
-//           date={node.date}
-//           excerpt={node.content.childMarkdownRemark.excerpt}
-//         />
-//       )}
-//       <Pagination 
-//         currentPage={3}
-//         numberOfPages={10}
-//         onPageSelect={console.log}
-//       />
-//     </div>
-//   )
-// }
 
 export default BlogPostList
