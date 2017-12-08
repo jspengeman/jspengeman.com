@@ -1,4 +1,6 @@
 import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import theme from '../assets/theme'
 
 /**
  * Empty layout. This allows all other pages
@@ -7,4 +9,12 @@ import React from 'react'
  * so that the BlogPost template can be used
  * in a way that will not duplicate a header.
  */
-export default ({ children }) => children()
+export default ({ children }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <div>
+        {children()}
+      </div>
+    </ThemeProvider>
+  )
+}

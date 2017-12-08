@@ -1,8 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
+import { Foreground } from '../layouts'
 import Header, { PostHeaderContent } from '../components/Header'
+import PostDate from '../components/PostDate'
 import Footer from '../components/Footer'
 import Comments from '../components/Comments'
+
+const CommentsWrapper = styled.section`
+	margin-top: 45px;
+	> a {
+		color: ${props => props.theme.colors.accent}
+  }
+`
 
 const BlogPost = ({ data }) => {
   const post = data.contentfulBlogPost
@@ -12,10 +22,10 @@ const BlogPost = ({ data }) => {
       <Header> 
         <PostHeaderContent 
           title={post.title} 
-          date={post.date} 
+          date={<PostDate date={post.date} invert/>} 
         />
       </Header> 
-      <section className='foreground'>
+      <Foreground>
         <Helmet>
           <title> {post.title} </title>
           <meta property='og:type' content='article' />
@@ -28,15 +38,15 @@ const BlogPost = ({ data }) => {
         </Helmet>
         <section className='markup-area'>
           <div dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }} />
-          <section className='comments'>
+          <CommentsWrapper>
             <Comments 
               id={post.id}
               title={post.title}
               url={`${site.siteUrl}/${post.slug}`}
             />
-          </section>
+          </CommentsWrapper>
         </section>
-      </section>
+      </Foreground>
       <Footer social={site.social} />
     </div>
   )

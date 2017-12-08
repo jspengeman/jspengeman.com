@@ -1,43 +1,74 @@
 import React from 'react'
+import styled from 'styled-components'
 import TwitterIcon from 'react-icons/lib/ti/social-twitter'
 import LinkedInIcon from 'react-icons/lib/ti/social-linkedin'
 import MailIcon from 'react-icons/lib/ti/mail'
 import GithubIcon from 'react-icons/lib/ti/social-github'
 import RSSIcon from 'react-icons/lib/ti/rss'
 
+const FooterWrapper = styled.footer`
+  text-align: center;
+  color: #aaa;
+`
+
+const Copyright = styled.span`
+  font-size: 18px;
+  font-weight: 700;
+`
+
+const SocialIcons = styled.ul`
+  margin: 15px 0 25px 0;
+`
+
+const SocialIcon = styled.li`
+  display: inline-block;
+`
+
+const SocialLink = styled.a`
+  display: block;
+  padding: 3px 12px;
+  color: #aaa;
+  font-size: 28px;
+  &:hover {
+    color: $accent-color;
+    text-decoration: none;
+  }
+`
+
+// TODO: Little bit of duplicate code blocks below.
 const Footer = ({ social }) => {
   const year = new Date().getFullYear()
   return (
-    <footer>
-      <span className='copy'>&copy; {year} - Jonathan Spengeman</span>
-      <ul className='social-nav'>
-        <li>
-          <a href='/atom.xml'>
+    <FooterWrapper>
+      <Copyright>&copy; {year} - Jonathan Spengeman</Copyright>
+      <SocialIcons>
+        <SocialIcon>
+          <SocialLink href='/atom.xml'>
             <RSSIcon />
-          </a>
-        </li>
-        <li>
-          <a href={`mailto:${social.email}`}>
+          </SocialLink>
+        </SocialIcon>
+        <SocialIcon>
+          <SocialLink href={`mailto:${social.email}`}>
             <MailIcon />
-          </a>
-        </li>
-        <li>
-          <a href={social.twitter}>
+          </SocialLink>
+        </SocialIcon>
+        <SocialIcon>
+          <SocialLink href={social.twitter}>
             <TwitterIcon />
-          </a>
-        </li>
-        <li>
-          <a href={social.linkedin}>
+          </SocialLink>
+        </SocialIcon>
+        <SocialIcon>
+          <SocialLink href={social.linkedin}>
             <LinkedInIcon />
-          </a>
-        </li>
-        <li>
-          <a href={social.github}>
+          </SocialLink>
+        </SocialIcon>
+        <SocialIcon>
+          <SocialLink href={social.github}>
             <GithubIcon />
-          </a>
-        </li>
-      </ul>
-    </footer>
+          </SocialLink>
+        </SocialIcon>
+      </SocialIcons>
+    </FooterWrapper>
   )
 }
 
