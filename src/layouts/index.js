@@ -21,7 +21,7 @@ injectGlobal`
 
 // TODO: May want to move this component?
 export const Foreground = styled.section`
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   background-color: #fff;
   border-radius: 3px;
   width: 100%;
@@ -40,7 +40,7 @@ export const Foreground = styled.section`
 // TODO: This name is super verbose? (Best way to do this?)
 const ForegroundWithPagination = Foreground.extend`
   padding: 25px 25px 70px 25px;
-  @media (min-width: 1000px) {  
+  @media (min-width: 1000px) {
     padding: 55px 45px 100px 45px;
   }
 `
@@ -52,11 +52,9 @@ export default ({ children, data }) => {
     <ThemeProvider theme={theme}>
       <div>
         <Header>
-          <PageHeaderContent title={title} /> 
+          <PageHeaderContent title={title} />
         </Header>
-        <ForegroundWithPagination>
-          {children()} 
-        </ForegroundWithPagination>
+        <ForegroundWithPagination>{children()}</ForegroundWithPagination>
         <Footer social={social} />
       </div>
     </ThemeProvider>

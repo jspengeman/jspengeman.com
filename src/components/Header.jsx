@@ -11,7 +11,7 @@ const HeaderContent = styled.section`
   text-align: center;
   padding: 20px 0 85px 0;
   color: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   border-top: 7px solid ${props => props.theme.colors.accent};
 `
 
@@ -51,14 +51,14 @@ const Avatar = styled.img`
   @media (min-width: 760px) {
     max-width: 100px;
     margin-bottom: 20px;
-	}
+  }
 `
 
 export const PostHeaderContent = ({ title, date }) => {
   return (
     <section>
-      <AvatarLink to='/'>
-        <Avatar src={avatar} alt='avatar' />
+      <AvatarLink to="/">
+        <Avatar src={avatar} alt="avatar" />
       </AvatarLink>
       <Title> {title} </Title>
       {date}
@@ -69,8 +69,8 @@ export const PostHeaderContent = ({ title, date }) => {
 export const PageHeaderContent = ({ title }) => {
   return (
     <section>
-      <AvatarLink to='/'>
-        <Avatar src={avatar} alt='avatar' />
+      <AvatarLink to="/">
+        <Avatar src={avatar} alt="avatar" />
       </AvatarLink>
       <Title> {title} </Title>
       <SubTitle> Software Engineer </SubTitle>

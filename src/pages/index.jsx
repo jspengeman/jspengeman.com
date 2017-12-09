@@ -1,11 +1,11 @@
 import React from 'react'
-import Link from "gatsby-link"
+import Link from 'gatsby-link'
 import BlogPostList from '../components/BlogPostList'
 import { Helmet } from 'react-helmet'
 
 const Home = ({ data }) => {
   const site = data.site.siteMetadata
-  const [firstName, lastName] = site.title.split(" ")
+  const [firstName, lastName] = site.title.split(' ')
   return (
     <div>
       <Helmet>
@@ -18,7 +18,7 @@ const Home = ({ data }) => {
         <meta property="profile:first_name" content={firstName} />
         <meta property="profile:last_name" content={lastName} />
       </Helmet>
-      <BlogPostList posts={data.allContentfulBlogPost.edges} />  
+      <BlogPostList posts={data.allContentfulBlogPost.edges} />
     </div>
   )
 }
@@ -33,7 +33,7 @@ export const query = graphql`
       }
     }
 
-    allContentfulBlogPost(sort: {fields: [date], order: DESC}) {
+    allContentfulBlogPost(sort: { fields: [date], order: DESC }) {
       edges {
         node {
           title
@@ -49,6 +49,6 @@ export const query = graphql`
       }
     }
   }
-  `
+`
 
 export default Home

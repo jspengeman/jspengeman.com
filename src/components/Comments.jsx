@@ -4,7 +4,7 @@ import ReactDisqusComments from 'react-disqus-comments'
 const Comments = ({ id, title, url }) => {
   return (
     <ReactDisqusComments
-      shortname='jspengeman-com'
+      shortname="jspengeman-com"
       identifier={id}
       title={title}
       url={url}

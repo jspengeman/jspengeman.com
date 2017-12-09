@@ -12,9 +12,7 @@ import theme from '../assets/theme'
 export default ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <div>
-        {children()}
-      </div>
+      <div>{children()}</div>
     </ThemeProvider>
   )
 }

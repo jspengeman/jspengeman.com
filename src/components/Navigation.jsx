@@ -25,7 +25,7 @@ const StyledLink = styled(Link)`
     opacity: 0.8;
   }
   &:active {
-    background-color: rgba(250,250,250,0.2);
+    background-color: rgba(250, 250, 250, 0.2);
   }
   &:visited {
     color: #fff;
@@ -36,10 +36,10 @@ const Navigation = () => {
   return (
     <List>
       <ListItem>
-        <StyledLink to='/'>Home</StyledLink>
+        <StyledLink to="/">Home</StyledLink>
       </ListItem>
       <ListItem>
-        <StyledLink to='/about'>About</StyledLink>
+        <StyledLink to="/about">About</StyledLink>
       </ListItem>
     </List>
   )

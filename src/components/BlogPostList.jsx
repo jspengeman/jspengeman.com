@@ -4,7 +4,7 @@ import BlogPost from './BlogPost'
 import Pagination from './Pagination'
 
 const CenterText = styled.div`
-  text-align: center
+  text-align: center;
 `
 
 class BlogPostList extends Component {
@@ -24,13 +24,11 @@ class BlogPostList extends Component {
 
   onPageSelect(currentPage) {
     const offset = currentPage * this.state.limit
-    this.setState({currentPage, offset})
+    this.setState({ currentPage, offset })
   }
 
   getPostsByPage(posts) {
-    return posts.slice(
-      this.state.offset, 
-      this.state.offset + this.state.limit)
+    return posts.slice(this.state.offset, this.state.offset + this.state.limit)
   }
 
   render() {
@@ -38,17 +36,17 @@ class BlogPostList extends Component {
     return (
       <div>
         <CenterText>
-          {posts.map(({ node }) =>
-            <BlogPost 
+          {posts.map(({ node }) => (
+            <BlogPost
               key={node.slug}
               slug={node.slug}
               title={node.title}
               date={node.date}
               excerpt={node.content.childMarkdownRemark.excerpt}
             />
-          )}
+          ))}
         </CenterText>
-        <Pagination 
+        <Pagination
           currentPage={this.state.currentPage}
           numberOfPages={this.state.numberOfPages}
           onPageSelect={this.onPageSelect}

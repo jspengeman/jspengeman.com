@@ -43,7 +43,7 @@ const Footer = ({ social }) => {
       <Copyright>&copy; {year} - Jonathan Spengeman</Copyright>
       <SocialIcons>
         <SocialIcon>
-          <SocialLink href='/atom.xml'>
+          <SocialLink href="/atom.xml">
             <RSSIcon />
           </SocialLink>
         </SocialIcon>

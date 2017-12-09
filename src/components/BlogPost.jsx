@@ -53,7 +53,9 @@ const ReadMore = styled(Link)`
 const BlogPost = ({ slug, title, date, excerpt }) => {
   return (
     <Article>
-      <Title><PostLink to={slug}> {title} </PostLink></Title>
+      <Title>
+        <PostLink to={slug}> {title} </PostLink>
+      </Title>
       <PostDate date={date} />
       <Excerpt> {excerpt} </Excerpt>
       <ReadMore to={slug}> Read More </ReadMore>
