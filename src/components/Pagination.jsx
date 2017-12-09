@@ -4,6 +4,7 @@ import ChevronRight from 'react-icons/lib/fa/chevron-right'
 import ChevronLeft from 'react-icons/lib/fa/chevron-left'
 
 const PaginationWrapper = styled.section`
+  text-align: center;
   position: absolute;
   bottom: 0;
   left: 0;
