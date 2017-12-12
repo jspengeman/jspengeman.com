@@ -5,17 +5,9 @@ import Footer from '../components/Footer'
 import theme from '../assets/theme'
 import '../assets/syntax.css'
 
-// TODO: Anchor tags in the blog posts are not styled correctly.
 injectGlobal`
   body {
     background-color: #F2F2F2;
-  }
-  a {
-    color: ${props => props.theme.colors.accent};
-    text-decoration: none;
-  }
-  a:visited {
-    color: ${props => props.theme.colors.accent};
   }
 `
 

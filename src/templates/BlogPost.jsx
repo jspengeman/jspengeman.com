@@ -1,11 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
+import { lighten } from 'polished'
 import { Helmet } from 'react-helmet'
 import { Foreground } from '../layouts'
 import Header, { PostHeaderContent } from '../components/Header'
 import PostDate from '../components/PostDate'
 import Footer from '../components/Footer'
 import Comments from '../components/Comments'
+
+const Content = styled.section`
+  a {
+    color: ${props => props.theme.colors.accent};
+    text-decoration: none;
+  }
+  a:visited {
+    color: ${props => lighten(0.3, props.theme.colors.bodyText)};
+  }
+  a:hover {
+    color: ${props => lighten(0.2, props.theme.colors.accent)};
+  }
+  code {
+    padding: 2px 3px 2px 3px;
+    border-radius: 5px;
+    background-color: #f0f3f3;
+  }
+`
 
 const CommentsWrapper = styled.section`
   margin-top: 45px;
@@ -33,7 +52,7 @@ const BlogPost = ({ data }) => {
           <meta property="article:published_time" content={post.date} />
           <meta property="article:author" content={site.siteUrl} />
         </Helmet>
-        <section>
+        <Content>
           <div
             dangerouslySetInnerHTML={{
               __html: post.content.childMarkdownRemark.html
@@ -46,7 +65,7 @@ const BlogPost = ({ data }) => {
               url={`${site.siteUrl}/${post.slug}`}
             />
           </CommentsWrapper>
-        </section>
+        </Content>
       </Foreground>
       <Footer social={site.social} />
     </div>

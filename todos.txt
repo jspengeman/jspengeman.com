@@ -1,10 +1,14 @@
 TODOS:
 1) Design how keywords will be used in the UI.
+1.1) Will it be a string or an entity with an string and icon?
+1.2) Design the UI for where the keywords will actually go.
 2) Add 'Up Next'/'You Might Like' component.
-3) Links are styled incorrectly.
-4) Add jest tests for all existing functionality.
-5) Update manifest file to have better favicons.
-6) Investigate using netlify for hosting/deployments.
-6.1) Setup custom domain name with netlify dns.
-6.2) Setup automatic build deployments with CI.
-6.3) Setup netlify plugin to enable server pushing.
+3) Design how post searching will work
+4) Add a 'Time To Read component.'
+5) Add jest tests for all existing functionality.
+6) Update manifest file to have better favicons.
+7) Investigate using netlify for hosting/deployments.
+8.1) Setup custom domain name with netlify dns.
+8.2) Setup automatic build deployments with CI.
+8.3) Setup netlify plugin to enable server pushing.
+9) Add some brief fade in on Link clicks for the foreground content.
