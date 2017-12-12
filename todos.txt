@@ -1,5 +1,9 @@
 TODOS:
 1) Design how keywords will be used in the UI.
-5) Add jest tests for all existing functionality.
-7) Update manifest file to have better favicons.
-8) Investigate using netlify for hosting/deployments.
+2) Add 'Up Next'/'You Might Like' component.
+3) Links are styled incorrectly.
+4) Add jest tests for all existing functionality.
+5) Update manifest file to have better favicons.
+6) Investigate using netlify for hosting/deployments.
+6.1) Setup custom domain name with netlify dns.
+6.2) Setup automatic build deployments with CI.
