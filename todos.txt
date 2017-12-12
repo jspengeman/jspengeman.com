@@ -7,3 +7,4 @@ TODOS:
 6) Investigate using netlify for hosting/deployments.
 6.1) Setup custom domain name with netlify dns.
 6.2) Setup automatic build deployments with CI.
+6.3) Setup netlify plugin to enable server pushing.
